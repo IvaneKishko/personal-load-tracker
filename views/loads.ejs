@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loads</title>
+    <link rel="stylesheet" href="/css/style.css" >
+
+</head>
+<body>
+    <h1>Homepage</h1>
+
+    <form action="/new" method="POST">
+        <div class="form-group">
+            <label for="carModel">Car Model: </label>
+            <input type="text" name="carModel">
+        </div>
+        <div class="form-group">
+            <label for="year">Car Year: </label>
+            <input type="number" name="year">
+        </div>
+        <div class="form-group">
+            <label for="from">From: </label>
+            <input type="text" name="from">
+        </div>
+        <div class="form-group">
+            <label for="to">Going to: </label>
+            <input type="text" name="to">
+        </div>
+        <div class="form-group">
+            <label for="pickupDate">Pick Up Date: </label>
+            <input type="date" name="pickUpDate">
+        </div>
+        <div class="form-group">
+            <label for="dropOffDate">Drop Off Date: </label>
+            <input type="date" name="dropOffDate">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <ul>
+        <% loadsList.forEach(load => { %>
+            <ul data-id= <%=load._id%>>
+                <li><%= load.carModel %></li>
+                <li><%= load.year %></li>
+                <li><%= load.from %></li>
+                <li><%= load.to %></li>
+                <li><%= load.pickUpDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></li>
+                <li><%= load.dropOffDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></li>
+                <span class="edit" data-id= <%=load._id%>>Edit</span>
+                <span class="remove" data-id= <%=load._id%>>Remove</span>
+                <br>
+                <br>
+            </ul>
+        <% }) %>
+    </ul>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

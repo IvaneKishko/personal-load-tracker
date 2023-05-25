@@ -1,0 +1,19 @@
+{
+  "name": "personal-load-tracker",
+  "version": "1.0.0",
+  "description": "Load tracker for car dispatchers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Ivane Kishko",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.0",
+    "nodemon": "^2.0.22"
+  }
+}
